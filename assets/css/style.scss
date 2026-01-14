@@ -1,0 +1,646 @@
+---
+# Jekyll SCSS
+---
+
+// Colors
+$black: #1a1a1a;
+$white: #ffffff;
+$gray-dark: #333333;
+$gray-light: #f5f5f5;
+$gray-lighter: #f9f9f9;
+$blue: #0066cc;
+$text-color: #333333;
+$bg-color: #ffffff;
+$border-color: #e0e0e0;
+
+// Typography
+$font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-size-base: 16px;
+$line-height-base: 1.6;
+$font-weight-normal: 400;
+$font-weight-bold: 600;
+
+// Spacing
+$spacing-unit: 1rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-family;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $text-color;
+  background-color: $bg-color;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  margin-top: $spacing-unit * 1.5;
+  margin-bottom: $spacing-unit * 0.5;
+  font-weight: $font-weight-bold;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 1.8rem;
+  border-bottom: 1px solid $border-color;
+  padding-bottom: 0.5rem;
+  margin-top: $spacing-xl;
+}
+
+h3 {
+  font-size: 1.3rem;
+  margin-top: $spacing-lg;
+}
+
+p {
+  margin: 0 0 $spacing-unit 0;
+}
+
+a {
+  color: $blue;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+code {
+  background-color: $gray-light;
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-family: "Courier New", monospace;
+  font-size: 0.9em;
+}
+
+pre {
+  background-color: $gray-light;
+  padding: $spacing-unit;
+  border-radius: 4px;
+  overflow-x: auto;
+  
+  code {
+    background-color: transparent;
+    padding: 0;
+  }
+}
+
+blockquote {
+  border-left: 4px solid $border-color;
+  margin: $spacing-unit 0;
+  padding-left: $spacing-unit;
+  color: $gray-dark;
+}
+
+ul, ol {
+  margin: $spacing-unit 0;
+  padding-left: 2rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+// Layout
+.navbar {
+  background-color: $white;
+  border-bottom: 1px solid $border-color;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  
+  .navbar-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: $spacing-lg $spacing-unit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar-brand {
+    font-size: 1.2rem;
+    font-weight: $font-weight-bold;
+    
+    a {
+      color: $text-color;
+      text-decoration: none;
+      
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+  
+  .navbar-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: $spacing-xl;
+    
+    a {
+      color: $text-color;
+      text-decoration: none;
+      font-weight: $font-weight-normal;
+      
+      &:hover {
+        color: $blue;
+      }
+      
+      &.active {
+        color: $blue;
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+}
+
+.content {
+  min-height: calc(100vh - 240px);
+  
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: $spacing-xl $spacing-unit;
+  }
+}
+
+.footer {
+  background-color: $gray-lighter;
+  border-top: 1px solid $border-color;
+  padding: $spacing-xl $spacing-unit;
+  margin-top: $spacing-xl * 2;
+  
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 0.95rem;
+  }
+  
+  .footer-text {
+    margin: 0;
+  }
+  
+  a {
+    color: $text-color;
+    
+    &:hover {
+      color: $blue;
+    }
+  }
+}
+
+// Hero section
+.hero {
+  background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+  border-bottom: 1px solid $border-color;
+  padding: $spacing-xl * 2 $spacing-unit;
+  margin-bottom: $spacing-xl;
+  
+  .hero-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: $spacing-xl * 2;
+    align-items: center;
+  }
+  
+  .hero-image {
+    text-align: center;
+    
+    img {
+      width: 180px;
+      height: 180px;
+      border-radius: 12px;
+      border: 1px solid $border-color;
+      display: block;
+      margin: 0 auto;
+    }
+    
+    .placeholder-svg {
+      max-width: 100%;
+      border-radius: 12px;
+    }
+  }
+  
+  .hero-text {
+    h1 {
+      margin: 0 0 0.5rem 0;
+      font-size: 2.8rem;
+    }
+  }
+  
+  .hero-subtitle {
+    font-size: 1.3rem;
+    color: $blue;
+    margin: 0 0 0.3rem 0;
+    font-weight: $font-weight-normal;
+  }
+  
+  .hero-affiliation {
+    font-size: 1rem;
+    color: $gray-dark;
+    margin: 0 0 $spacing-lg 0;
+    font-style: italic;
+  }
+  
+  .hero-bio {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: $text-color;
+    max-width: 500px;
+  }
+}
+
+// Education section
+.education-section {
+  display: grid;
+  gap: $spacing-lg;
+  margin: $spacing-xl 0;
+}
+
+// Interests section
+.interests-section {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: $spacing-xl * 2;
+  align-items: center;
+  margin: $spacing-xl 0;
+  background-color: $gray-lighter;
+  padding: $spacing-xl;
+  border-radius: 8px;
+}
+
+.interests-image {
+  max-width: 100%;
+  
+  .placeholder-svg {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+  }
+}
+
+.interests-text {
+  p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+}
+
+.interests-list {
+  list-style: none;
+  padding: 0;
+  margin: $spacing-lg 0 0 0;
+  
+  li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    
+    &::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: $blue;
+      font-weight: $font-weight-bold;
+    }
+  }
+}
+
+// Aeronautics section
+.aero-section {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: $spacing-xl * 2;
+  align-items: center;
+  margin: $spacing-xl 0;
+  background-color: $white;
+  padding: $spacing-xl;
+  border-radius: 8px;
+  border: 1px solid $border-color;
+}
+
+.aero-content {
+  p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin: 0 0 $spacing-lg 0;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.aero-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// Project cards
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: $spacing-xl;
+  margin: $spacing-xl 0;
+}
+
+// Laboratory section
+.lab-section {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: $spacing-xl * 2;
+  align-items: flex-start;
+  margin: $spacing-xl 0;
+  background-color: $gray-lighter;
+  padding: $spacing-xl;
+  border-radius: 8px;
+  border-left: 4px solid $blue;
+}
+
+.lab-logo {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $white;
+  border-radius: 8px;
+  padding: $spacing-lg;
+}
+
+.lab-content {
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+  }
+  
+  h4 {
+    margin-top: $spacing-lg;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: $blue;
+  }
+  
+  p {
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 $spacing-lg 0;
+    
+    li {
+      padding: 0.4rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      font-size: 0.95rem;
+      
+      &::before {
+        content: "▸";
+        position: absolute;
+        left: 0;
+        color: $blue;
+      }
+    }
+  }
+}
+
+.lab-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  background-color: $blue;
+  color: $white;
+  border-radius: 4px;
+  font-weight: $font-weight-bold;
+  transition: background-color 0.2s ease;
+  
+  i {
+    margin-right: 0.5rem;
+  }
+  
+  &:hover {
+    background-color: #0052a3;
+    text-decoration: none;
+  }
+}
+
+.lab-links {
+  display: flex;
+  gap: $spacing-lg;
+  margin-top: $spacing-lg;
+  flex-wrap: wrap;
+}
+
+// Project cards
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: $spacing-xl;
+  margin: $spacing-xl 0;
+}
+
+.project-card {
+  background-color: $white;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    border-color: $blue;
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.1);
+  }
+  
+  .project-image {
+    width: 100%;
+    aspect-ratio: 1.5;
+    background-color: $gray-lighter;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    
+    .placeholder-svg {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+  h3 {
+    margin: $spacing-lg $spacing-lg 0.5rem $spacing-lg;
+    font-size: 1.2rem;
+  }
+  
+  p {
+    margin: 0 $spacing-lg $spacing-lg $spacing-lg;
+    font-size: 0.95rem;
+    color: $gray-dark;
+  }
+  
+  .project-actions {
+    display: flex;
+    gap: $spacing-lg;
+    padding: 0 $spacing-lg $spacing-lg $spacing-lg;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    background-color: $blue;
+    color: $white;
+    border-radius: 4px;
+    font-weight: $font-weight-bold;
+    transition: background-color 0.2s ease;
+    white-space: nowrap;
+    height: 40px;
+    
+    i {
+      margin-right: 0.5rem;
+    }
+    
+    &:hover {
+      background-color: #0052a3;
+      text-decoration: none;
+    }
+  }
+}
+
+// Definition lists (for education)
+dt {
+  font-weight: $font-weight-bold;
+  margin-top: $spacing-lg;
+}
+
+dd {
+  margin-left: 0;
+  margin-bottom: $spacing-md;
+  color: $gray-dark;
+  padding-left: 0;
+}
+
+// Responsive
+@media (max-width: $breakpoint-md) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .navbar {
+    .navbar-container {
+      flex-direction: column;
+      gap: $spacing-unit;
+      padding: $spacing-md $spacing-unit;
+    }
+    
+    .navbar-menu {
+      justify-content: center;
+      gap: $spacing-lg;
+    }
+  }
+  
+  .hero {
+    padding: $spacing-xl $spacing-unit;
+    
+    .hero-content {
+      grid-template-columns: 1fr;
+      gap: $spacing-lg;
+    }
+    
+    .hero-text {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  }
+  
+  .interests-section {
+    grid-template-columns: 1fr;
+  }
+  
+  .aero-section {
+    grid-template-columns: 1fr;
+    gap: $spacing-lg;
+    
+    .aero-image {
+      width: 100%;
+      height: 250px;
+      margin: 0 auto;
+    }
+  }
+  
+  .lab-section {
+    grid-template-columns: 1fr;
+    gap: $spacing-lg;
+    
+    .lab-logo {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto;
+    }
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .content {
+    .container {
+      padding: $spacing-lg $spacing-unit;
+    }
+  }
+}

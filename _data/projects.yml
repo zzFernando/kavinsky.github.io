@@ -1,0 +1,26 @@
+# Research & Engineering Projects
+# Academic and technical work
+
+- name: "CuMiDaVis"
+  description: "Interactive dashboard for visualization and exploration of cancer microarray genomic data. Provides dimensionality reduction (PCA, t-SNE, UMAP), correlation analysis, and automated gene selection using Random Forest importance."
+  tech: ["Python", "Streamlit", "Plotly", "scikit-learn", "pandas"]
+  github: "https://github.com/zzfernando/CuMiDaVis"
+  live: "https://cmdvis3.streamlit.app/"
+  arxiv: null
+  featured: true
+
+- name: "GeneCancerPredictor"
+  description: "Machine learning system for hepatocellular carcinoma (HCC) prediction from gene expression data. Compares 6 models (FNN, KNN, K-Means, Naive Bayes, Random Forest, SVM) with hyperparameter optimization and detailed performance analysis."
+  tech: ["Python", "PyTorch", "scikit-learn", "Streamlit", "pandas"]
+  github: "https://github.com/zzfernando/GeneCancerPredictor"
+  live: "https://gcp-analyzer.streamlit.app/"
+  arxiv: null
+  featured: true
+
+- name: "neuroevo-weight-space-viz"
+  description: "Visualization framework for analyzing neuroevolution populations in weight space. Features aligned UMAP, vector field analysis, and trajectory bundling to explore how evolutionary algorithms navigate neural network parameter spaces and develop interpretable representations."
+  tech: ["Python", "Streamlit", "PyTorch", "Matplotlib", "Plotly"]
+  github: "https://github.com/zzfernando/neuroevo-weight-space-viz"
+  live: "https://nwsviz.streamlit.app/"
+  arxiv: null
+  featured: true

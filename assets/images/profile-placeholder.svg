@@ -1,0 +1,11 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="95" fill="#f0f0f0" stroke="#d0d0d0" stroke-width="2"/>
+  
+  <!-- Academic portrait silhouette -->
+  <circle cx="100" cy="70" r="35" fill="#999999"/>
+  <path d="M 60 110 Q 60 130 75 140 L 75 180 L 125 180 L 125 140 Q 140 130 140 110" fill="#999999"/>
+  
+  <!-- Subtle academic border -->
+  <circle cx="100" cy="100" r="98" fill="none" stroke="#cccccc" stroke-width="1" opacity="0.5"/>
+</svg>

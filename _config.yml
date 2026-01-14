@@ -1,0 +1,39 @@
+# Jekyll configuration for GitHub Pages
+# Minimal academic research page
+
+# Site metadata
+title: Fernando Silveira
+description: M.Sc. student in Artificial Intelligence. Research in explainable AI, bioinformatics, and neuroevolution.
+author: Fernando Silveira
+email: fernando.silveira@inf.ufrgs.br
+url: "https://zzfernando.github.io"
+baseurl: ""
+
+# Social profiles
+github_username: zzFernando
+linkedin_username: fernando-silveira
+
+# Jekyll settings
+markdown: kramdown
+highlighter: rouge
+permalink: /posts/:year/:month/:day/:title/
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# SASS compilation
+sass:
+  style: compressed
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - .gitignore
+  - README.md
+  - CUSTOMIZATION.md
+  - DEPLOYMENT.md
+  - vendor
